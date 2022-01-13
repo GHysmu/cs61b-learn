@@ -64,7 +64,7 @@ public class Planet {
         int num = Planets.length;
         int NetForceX = 0;
         for(int i =0;i<num;i++){
-            //if(this.equals(Planets[i])){continue;}
+            if(this.equals(Planets[i])){continue;}
             NetForceX += calcForceExertedByX(Planets[i]);
         }
         return NetForceX;
@@ -75,7 +75,7 @@ public class Planet {
         int num = Planets.length;
         int NetForceY = 0;
         for(int i =0;i<num;i++){
-            //if(this.equals(Planets[i])){continue;}
+            if(this.equals(Planets[i])){continue;}
             NetForceY += calcForceExertedByY(Planets[i]);
         }
         return NetForceY;
