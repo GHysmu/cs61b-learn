@@ -62,7 +62,7 @@ public class Planet {
     }
     public double calcNetForceExertedByX(Planet[] Planets){
         int num = Planets.length;
-        int NetForceX = 0;
+        double NetForceX = 0;
         for(int i =0;i<num;i++){
             if(this.equals(Planets[i])){continue;}
             NetForceX += calcForceExertedByX(Planets[i]);
@@ -73,7 +73,7 @@ public class Planet {
 
     public double calcNetForceExertedByY(Planet[] Planets){
         int num = Planets.length;
-        int NetForceY = 0;
+        double NetForceY = 0;
         for(int i =0;i<num;i++){
             if(this.equals(Planets[i])){continue;}
             NetForceY += calcForceExertedByY(Planets[i]);
