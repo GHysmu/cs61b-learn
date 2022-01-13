@@ -29,12 +29,14 @@ public class Planet {
         imgFileName = P.imgFileName;
     }
     //@Override
+    /*
     public boolean equals(Planet P) {
         if (this == P) return true;
         if (P == null || getClass() != P.getClass()) return false;
         //Planet planet = (Planet) P;
         return Double.compare(P.xxPos, xxPos) == 0 && Double.compare(P.yyPos, yyPos) == 0 && Double.compare(P.xxVel, xxVel) == 0 && Double.compare(P.yyVel, yyVel) == 0 && Double.compare(P.mass, mass) == 0 && imgFileName.equals(P.imgFileName);
     }
+     */
 
     public double calcDistance(Planet P){
         double distance;
@@ -62,7 +64,7 @@ public class Planet {
         int num = Planets.length;
         int NetForceX = 0;
         for(int i =0;i<num;i++){
-            if(this.equals(Planets[i])){continue;}
+            //if(this.equals(Planets[i])){continue;}
             NetForceX += calcForceExertedByX(Planets[i]);
         }
         return NetForceX;
@@ -73,7 +75,7 @@ public class Planet {
         int num = Planets.length;
         int NetForceY = 0;
         for(int i =0;i<num;i++){
-            if(this.equals(Planets[i])){continue;}
+            //if(this.equals(Planets[i])){continue;}
             NetForceY += calcForceExertedByY(Planets[i]);
         }
         return NetForceY;
