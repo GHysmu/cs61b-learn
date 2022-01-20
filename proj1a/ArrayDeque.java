@@ -87,8 +87,7 @@ public class ArrayDeque<T>{
 
 
     public boolean isEmpty(){
-        if(left == right) return true;
-        else return false;
+        return (left==right);
 
     }
 
@@ -98,7 +97,9 @@ public class ArrayDeque<T>{
     }
 
     public boolean lowUsage(){
-        if(capacity >= 16 && size() < capacity / 4){
+        if(capacity >= 16 && size() < capacity / 4)
+        {
+
             return true;
         }
         else return false;

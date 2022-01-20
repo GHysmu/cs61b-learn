@@ -21,9 +21,9 @@ public class LinkedListDeque<T> {
      * first = dummy.next
      * last = dummy.prev
      */
-    public int size;
-    public LinkedListNode<T> dummy;
-
+    private int size;
+    private LinkedListNode<T> dummy;
+    /*
     public LinkedListDeque(T i){
         LinkedListNode<T> first = new LinkedListNode<T>(null,i,null);
         dummy = new LinkedListNode<T>(first,i,first);
@@ -31,6 +31,7 @@ public class LinkedListDeque<T> {
         first.prev = dummy;
         size = 1;
     }
+    */
     public LinkedListDeque(){
         dummy = new LinkedListNode<T>(null,(T) new Object(),null);
         dummy.prev = dummy;
@@ -55,11 +56,10 @@ public class LinkedListDeque<T> {
     }
 
     public boolean isEmpty(){
-
-        if(size == 0) return true;
-        else return false;
+        return (size()==0);
 
     }
+
     public int size(){
         return size;
 
@@ -80,6 +80,7 @@ public class LinkedListDeque<T> {
      */
     public T removeFirst(){
         //empty list?
+        if(isEmpty()) return null;
         T removedItem = dummy.next.item;
         dummy.next = dummy.next.next;
         dummy.next.prev = dummy;
@@ -94,6 +95,7 @@ public class LinkedListDeque<T> {
      * @return
      */
     public T removeLast(){
+        if(isEmpty()) return null;
         T removedItem = dummy.prev.item;
         dummy.prev = dummy.prev.prev;
         dummy.prev.next = dummy;
@@ -119,7 +121,7 @@ public class LinkedListDeque<T> {
 
     public T getRecursive(int index){
 
-        return getRecursiceHelp(index,dummy.next);
+        return getRecursiceHelp(index, dummy.next);
 
 
     }
@@ -127,10 +129,5 @@ public class LinkedListDeque<T> {
     private T getRecursiceHelp(int index,LinkedListNode<T> temp){
         if(index == 0) return temp.item;
         else return getRecursiceHelp(index - 1,temp.next);
-
-
-
-
     }
-
 }
