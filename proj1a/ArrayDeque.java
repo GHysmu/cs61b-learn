@@ -69,7 +69,7 @@ public class ArrayDeque<T>{
         }
         else {
             int j = 0;
-            for(int i = left; i<capacity; i++,j++){
+            for(int i = left; i < capacity; i++,j++){
                 temp[j] = items[i];
             }
             for(int i = 0;i < right; i++,j++){
@@ -87,7 +87,7 @@ public class ArrayDeque<T>{
 
 
     public boolean isEmpty(){
-        return (left==right);
+        return (left == right);
 
     }
 
@@ -96,7 +96,7 @@ public class ArrayDeque<T>{
         return (right - left + capacity) % capacity;
     }
 
-    public boolean lowUsage(){
+    private boolean lowUsage(){
         if(capacity >= 16 && size() < capacity / 4)
         {
 
@@ -114,7 +114,7 @@ public class ArrayDeque<T>{
 
         //remove
         T removedFirst = items[left];
-        left = (left+1+capacity)%capacity;
+        left = (left + 1 + capacity) % capacity;
         return removedFirst;
 
     }
@@ -125,7 +125,7 @@ public class ArrayDeque<T>{
          */
 
         //check uaseage
-        if(size()==0) return null;
+        if(size() == 0) return null;
         if(lowUsage()){
             resize(capacity/2);
         }
