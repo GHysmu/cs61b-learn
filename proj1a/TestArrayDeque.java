@@ -1,7 +1,8 @@
 public class TestArrayDeque {
     public static void main(String[] args){
 
-        ArrayDeque<Integer> a = new ArrayDeque<>();
+        //ArrayDeque<Integer> a = new ArrayDeque<>();
+        LinkedListDeque<Integer> a = new LinkedListDeque<>();
         a.addFirst(5);
         a.addFirst(10);
 
@@ -23,8 +24,10 @@ public class TestArrayDeque {
         a.removeFirst();
         a.removeFirst();
 
-        System.out.println("test - 2 ");
-        a.printDeque();
 
+        System.out.println("test - 2 ");
+        //a.printDeque();
+        a.addLast(17);
+        System.out.println(a.getRecursive(0));
     }
 }
