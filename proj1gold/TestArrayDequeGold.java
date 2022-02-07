@@ -51,6 +51,7 @@ public class TestArrayDequeGold {
                     assertTrue(errs.toString(), sad1.isEmpty());
                     continue;
                 }
+
                 Integer s1 = sad1.removeLast();
                 Integer s2 = sad2.removeLast();
                 s--;
@@ -64,11 +65,10 @@ public class TestArrayDequeGold {
                     assertTrue(errs.toString(), sad1.isEmpty());
                     continue;
                 }
-
                 Integer s1 = sad1.removeFirst();
                 Integer s2 = sad2.removeFirst();
                 s--;
-                err = "removeLast()\n";
+                err = "removeFirst()\n";
                 errs.append(err);
                 assertEquals(errs.toString(),s2,s1);
             }
