@@ -14,7 +14,7 @@ public class TestArrayDequeGold {
         ArrayDequeSolution<Integer> sad2 = new ArrayDequeSolution<Integer>();
 
         StringBuilder errs = new StringBuilder();
-        errs.append("\n");
+        //errs.append("\n");
         String err = "";
         int s = 0;
 
@@ -23,7 +23,7 @@ public class TestArrayDequeGold {
             double numberBetweenZeroAndOne = StdRandom.uniform();
             if (i % 5 == 0) {
                 errs.append("size()\n");
-                assertEquals(errs.toString(), sad1.size(), sad2.size());
+                assertEquals(errs.toString(), sad2.size(), sad1.size());
             }
 
             if (numberBetweenZeroAndOne < 0.25) {
@@ -34,7 +34,7 @@ public class TestArrayDequeGold {
                 err = "addLast(" + i + ")\n";
                 errs.append(err);
 
-                assertEquals(errs.toString(),sad1.get(s-1),sad2.get(s-1));
+                assertEquals(errs.toString(),sad2.get(s-1),sad1.get(s-1));
 
             } else if (numberBetweenZeroAndOne < 0.5) {
                 sad1.addFirst(i);
@@ -42,7 +42,7 @@ public class TestArrayDequeGold {
                 s++;
                 err = "addFirst(" + i + ")\n";
                 errs.append(err);
-                assertEquals(errs.toString(),sad1.get(0),sad2.get(0));
+                assertEquals(errs.toString(),sad2.get(0),sad1.get(0));
 
 
             } else if (numberBetweenZeroAndOne < 0.75 ) {
@@ -58,7 +58,7 @@ public class TestArrayDequeGold {
                 errs.append(err);
                 assertEquals(errs.toString(),s2,s1);
 
-            } else if (!sad1.isEmpty() && !sad2.isEmpty()){
+            } else {
                 if (sad2.isEmpty()) {
                     errs.append("isEmpty()\n");
                     assertTrue(errs.toString(), sad1.isEmpty());
