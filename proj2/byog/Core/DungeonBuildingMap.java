@@ -3,21 +3,19 @@ package byog.Core;
 import byog.TileEngine.TERenderer;
 import byog.TileEngine.TETile;
 import byog.TileEngine.Tileset;
-import com.sun.java.swing.plaf.windows.WindowsDesktopIconUI;
-
 import java.util.Random;
 
 public class DungeonBuildingMap {
 
-    private class Position {
+    private class DPosition {
         private int pX;
         private int pY;
 
-        private Position(int x, int y) {
+        private DPosition(int x, int y) {
             this.pX = x;
             this.pY = y;
         }
-        private Position() {
+        private DPosition() {
             this.pX = 0;
             this.pY = 0;
         }
@@ -55,7 +53,7 @@ public class DungeonBuildingMap {
         //
 
         while (true) {
-            Position start = new Position(random.nextInt(WIDTH), random.nextInt(HEIGHT));
+            DPosition start = new DPosition(random.nextInt(WIDTH), random.nextInt(HEIGHT));
             int w = random.nextInt(WIDTH/6) + 1;
             int h = random.nextInt(HEIGHT/6) + 1;
 
@@ -70,7 +68,7 @@ public class DungeonBuildingMap {
 
             //System.out.println("Iteration : " + i);
             //choose start wall
-            Position p = getStartWall();
+            DPosition p = getStartWall();
 
             double type = random.nextDouble();
             int direction = random.nextInt(4) + 1;
@@ -102,11 +100,11 @@ public class DungeonBuildingMap {
     }
 
 
-    private Position getStartWall() {
+    private DPosition getStartWall() {
 
         while (true) {
 
-            Position p = new Position(random.nextInt(WIDTH - 1),random.nextInt(HEIGHT - 1));
+            DPosition p = new DPosition(random.nextInt(WIDTH - 1),random.nextInt(HEIGHT - 1));
             if (checkStartWall(p)) {
                 return p;
             }
@@ -116,7 +114,7 @@ public class DungeonBuildingMap {
     }
 
 
-    private boolean checkStartWall(Position p) {
+    private boolean checkStartWall(DPosition p) {
         int pX = p.pX;
         int pY = p.pY;
 
@@ -141,7 +139,7 @@ public class DungeonBuildingMap {
     }
 
 
-    private boolean addRoom(Position start, int w, int h, int direction) {
+    private boolean addRoom(DPosition start, int w, int h, int direction) {
         int pX = start.pX;
         int pY = start.pY;
         switch (direction) {
@@ -238,7 +236,7 @@ public class DungeonBuildingMap {
 
 
 
-    private boolean addHallWay(Position start, int l, int direction) {
+    private boolean addHallWay(DPosition start, int l, int direction) {
 
         if (direction == 1 || direction == 3) {
             return addRoom(start, 1, l, direction);
@@ -254,7 +252,7 @@ public class DungeonBuildingMap {
         for(int i = 0; i < WIDTH; i++) {
             for(int j = 0; j < HEIGHT; j++){
                 if(world[i][j] == Tileset.NOTHING) {
-                    if(checkAddWall(new Position(i,j))) {
+                    if(checkAddWall(new DPosition(i,j))) {
                         drawCeil(i, j,Tileset.WALL);
                     }
 
@@ -273,7 +271,7 @@ public class DungeonBuildingMap {
 
     }
 
-    private boolean checkAddWall(Position p) {
+    private boolean checkAddWall(DPosition p) {
         int pX = p.pX;
         int pY = p.pY;
 

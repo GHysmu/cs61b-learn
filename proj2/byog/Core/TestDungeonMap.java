@@ -4,8 +4,6 @@ import byog.TileEngine.TERenderer;
 import byog.TileEngine.TETile;
 import byog.TileEngine.Tileset;
 
-import javax.swing.text.Position;
-
 public class TestDungeonMap {
 
     public static void main(String[] args) {
@@ -19,7 +17,6 @@ public class TestDungeonMap {
 
         //DungeonBuildingMap map = new DungeonBuildingMap(WIDTH, HEIGHT, seed);
         test.main(argsTest);
-
 
     }
 
