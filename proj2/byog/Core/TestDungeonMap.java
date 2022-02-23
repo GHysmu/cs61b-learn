@@ -12,7 +12,7 @@ public class TestDungeonMap {
         int seed = 389479;
 
         Main test = new Main();
-        String[] argsTest = new String[] {"23433"};
+        String[] argsTest = new String[] {"n5197880843569031643s"};
         // draws the world to the screen
 
         //DungeonBuildingMap map = new DungeonBuildingMap(WIDTH, HEIGHT, seed);

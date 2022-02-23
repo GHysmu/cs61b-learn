@@ -27,7 +27,7 @@ public class DungeonBuildingMap {
     private Random random;
     public TETile[][] world;
 
-    public DungeonBuildingMap(int w, int h, int seed) {
+    public DungeonBuildingMap(int w, int h, long seed) {
 
         this.WIDTH = w;
         this.HEIGHT = h;

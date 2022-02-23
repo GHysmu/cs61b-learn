@@ -33,7 +33,7 @@ public class Game {
         // drawn if the same inputs had been given to playWithKeyboard().
 
         TETile[][] finalWorldFrame = null;
-        int seed = Integer.valueOf(input);
+        Long seed = Long.valueOf(input.substring(1,input.length()-1));
         DungeonBuildingMap map = new DungeonBuildingMap(WIDTH, HEIGHT, seed);
         finalWorldFrame = map.world;
         return finalWorldFrame;
